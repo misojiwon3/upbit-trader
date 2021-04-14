@@ -1,0 +1,23 @@
+{
+  "name": "upbit-trader",
+  "version": "1.0.0",
+  "description": "upbit auto trading system",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hanseung",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.15",
+    "@babel/node": "^7.13.13",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2"
+  }
+}
