@@ -1,20 +1,36 @@
 console.log('hanseung');
 
+const http = require('http');
 
+const express = require('express');
+const fs = require('fs')
 const request = require('request')
 const uuidv4 = require("uuid/v4")
 const sign = require('jsonwebtoken').sign
 
-// import request from 'request';
-// import uuidv4 from 'uuid/v4';
-// import sign from 'jsonwebtoken';
+var app = express();
+var port = 3000;
+
+
+app.listen(port, function(){
+	console.log('Server Start, Port : ' + port);
+});
+
+app.get('/', function(req, res){
+	fs.readFile('index.html', function(error, data){
+		if(error){
+			console.log(error);
+		}else{
+			res.writeHead(200, {'Content-Type': 'text/html'});
+			res.end(data);
+		}
+	});
+});
+
 console.log(1);
 console.log(sign);
 console.log(2);
 
-// const access_key = process.env.UPBIT_OPEN_API_ACCESS_KEY
-// const secret_key = process.env.UPBIT_OPEN_API_SECRET_KEY
-// const server_url = process.env.UPBIT_OPEN_API_SERVER_URL
 const access_key = 'bk2M5jxtIAmyQliPotVUVLCiVmuMZoIxxVRaZoL1';
 const secret_key = 'lraPTmwav7OsOwylzbF1xmqgkt8v3pxx0gsOvj3L';
 const server_url = 'https://api.upbit.com';
